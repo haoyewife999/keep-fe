@@ -1,0 +1,15 @@
+body{
+    background: url(bg.png)
+}
+
+.w{
+    width: 900px;
+    margin: 0 auto;
+}
+/* 给需要的元素设置宽度和居中 */
+
+.header{
+    background-color: aquamarine;
+    padding-top: 37px;
+    padding-bottom: 46px;
+}

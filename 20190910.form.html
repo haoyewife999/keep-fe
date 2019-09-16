@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20190910.form</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <form action="20190909.target.html">
+        <fieldset>
+            <legend>用户信息</legend>
+            <label for="a">用户名</label>
+            <input type="text" name="uername" id="a">
+            <!-- 写了name才能提交给服务器 -->
+            <br>
+            <label for="b">密码</label>
+            <input type="password" name="password" id="b">
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>用户性格</legend>
+            性别
+            <input type="radio" name="gender" value="male" checked="checked" id="c"><label for="c">男</label>
+            <!-- checked="checked":设置默认选项 -->
+            <input type="radio" name="gender" value="female">女
+            <!-- gender同则单选项归一类 -->
+            <!-- 不需用户填写内容的表单项必须指定value -->
+            <br>
+            爱好
+            <input type="checkbox" name="hobby" value="basketball" id="d"><label for="d">篮球</label>
+            <input type="checkbox" name="hobby" value="badminton" checked="checked" id="j"><label for="j">羽毛球</label>
+            <input type="checkbox" name="hobby" value="movie" id="y"><label for="y">看电影</label>
+            <br>
+            <label for="e">你喜欢的明星</label>
+            <select name="star" id="e" multiple="multiple">
+                <!-- 下拉列表 -->
+                <!-- multiple="multiple":设置可以多选的下拉列表 -->
+                <optgroup label="女明星">
+                    <option value="fan">范冰冰</option>
+                    <option value="yang">杨幂</option>
+                </optgroup>
+                <optgroup label="男明星">
+                    <option value="li">李小龙</option>
+                    <option value="zhao">赵本山</option>
+                    <option value="han" selected="selected">韩东君</option>
+                    <!-- selected="selected":设置下拉列表默认选中 -->
+                </optgroup>
+            </select>
+            <br><br><br>
+        </fieldset>
+
+        <label for="f">注册</label>
+        <input type="submit" value="提交" id="f">
+        <br>
+        <label for="g">重置</label>
+        <input type="reset" id="g">
+        <br>
+        <input type="button" value="按钮">
+        <!-- 单纯的按钮 -->
+        <br>
+        <button>kk（提交）</button><button type="reset">重置</button>
+        <!-- button比input更推荐使用，默认值submit -->
+        <br>
+        <label for="t">自我介绍</label>
+        <textarea name="dh" id="t" cols="70" rows="10"></textarea>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20190901</title>
+    <style type="text/css">
+        span{
+            background-color: aqua;
+        }
+        .box1{
+            background-color: bisque;
+            width: 100px;
+            height: 100px;
+        }
+        .s1{
+            width: 100px;
+            height: 100px;
+        }
+        /* 内联元素不能设置width和height */
+        .s2{
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            /* 垂直方向内边距不影响布局 */
+            border: 20px blueviolet solid;
+            /* 垂直方向边框不影响布局 */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .s3{
+            margin-left: 20px;
+            margin-right: 20px;
+            /* 水平方向相邻外边距不会重叠 */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            /* 内联元素不支持垂直外边距 */
+        }
+        a.a{
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+        a.b{
+            display: inline-block;
+            /* 行内块元素：兼具块元素和内联元素的特点 */
+            width: 50px;
+            height: 50px;
+        }
+        a.c{
+            display: none;
+            /* 隐藏且不占据页面位置 */
+        }
+        a.d{
+            visibility: hidden;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .box2{
+            width: 100px;
+            height: 200px;
+            background-color: aquamarine;
+            overflow: scroll; 
+            /* scroll不智能  可改为auto */
+        }
+    </style> 
+</head>
+<body>
+    <span class="s1">I'm a span.</span>
+    <span class="s2">I'm a span.</span>
+    <span class="s3">I'm a span.</span>
+    <div class="box1">
+    </div>
+    <!-- 块元素支持宽高 -->
+    <br><br>
+    <a class="a" href="#">I'm a 超链接.</a>
+    <br><br>
+    <a class="b" href="#">I'm a 超链接.</a>
+    the same line.
+    <a href="#" class="c">I'm a 超链接.</a>
+    <br><br>
+    <a href="#" class="d">I'm a 超链接.</a>
+    the next line.
+    <div class="box2">
+        您好！
+
+欢迎来到 MDN 学习区。本系列文章旨在为 Web 开发的纯粹初学者提供一切开始编写简单网站所需的知识。
+
+本学习区的目标，不在于让您从“菜鸟”到“专家”，而在于带领您从“入门”到“适应”。这样您就有能力自行学习 MDN 的其他部分，也具备足够多的基础知识，去学习中级甚至是进阶资源。
+
+对于纯粹的初学者，Web 开发可能有些挑战性——我们会提供足够详细的资料来帮助您轻松愉快地学习相关主题。无论您是正在学习 Web 开发的学生（自学或者参与课程），寻找课堂材料的老师，还是编程爱好者，抑或仅仅想对 Web 技术有更多了解，您都能找到您所需要的信息。
+
+重要：学习区的内容会定期添加。如果您希望学习区纳入您感兴趣的主题，或者您感觉某些内容遗漏，请到下方 联系我们 获得可以联系我们的方式。
+
+从哪里开始？节
+完全初学者
+如果您是完全的 Web 初学者，我们建议您首先通读 Web 入门 模块。这个模块介绍了 Web 开发的实用入门知识。
+特定疑问
+如果您在 Web 开发中遇到问题，那么 常见问题 这个章节或许能对您有所帮助。
+基础之上
+如果您已经具备了一些知识，那么下一步就是详细了解 HTML 和 CSS 。从 HTML 入门 开始，然后到 CSS 入门。
+编写脚本
+如果您已经熟悉 HTML 和 CSS ，或者您主要对写程序感兴趣 ，想进行 JavaScript 或者服务端开发。那么就从 JavaScript 第一步 或 服务端第一步 模块开始了解吧。
+注意：您可以在词汇表查询术语定义。
+
+随机术语词条
+
+Presto
+Presto 是专有浏览器渲染引擎, 在 Opera browser 15版本以下使用. 之后的Opera浏览器基于Chromium, 使用 Blink 渲染引擎.
+涵盖的主题节
+以下是 MDN 学习区涵盖的所有主题列表：
+
+Web入门
+为初学者提供一个实用的 Web 开发入门。
+HTML — 构建网站
+HTML 是我们用来构造网站内容的不同部分并定义它们的意义或目的的语言。本主题详细讲授 HTML。
+CSS — 美化网站
+我们可以使用 CSS 这个语言来设计和布局我们的 Web 内容，以及添加像动画一类的行为。这个主题提供了详细的 CSS 指导。
+JavaScript — 动态客户端脚本语言
+JavaScript 是用于向 Web 页面添加动态功能的脚本语言。本主题讲授了编写和理解JavaScript 所需的所有基本要点。
+可访问性 — 让网站能被所有人使用
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+alt+F4      关闭窗口
+alt+esc     最小化窗口
+ctrl+w      关闭当前标签页
+ctrl+t      打开新标签页
+ctrl+tab    窗口切换
+ctrl+n      打开新窗口
+alt+左箭头  返回上一页面
+ctrl+h      历史纪录
+
+ctrl+shift+鼠标点击      打开并跳转至新标签页  
+ctrl+鼠标点击            打开新标签页但不跳转
+shift+鼠标点击           打开新窗口  
+
+ctrl+l      删除多行
+shift+tab   选中多行同时向左缩进
+按住alt     多光标操作
+ctrl+d     相同元素同时操作
+
+shift+左箭头            光标选中向左一个字母
+shift+右箭头            光标选中向左一个单词
+ctrl+左箭头             光标向左跳转一个单词
+ctrl+右箭头             光标向右跳转一个单词
+shift+home(fn+左箭头)   向左选中至行首
+shift+end(fn+右箭头)    向右选中至行尾
+home                   光标跳转至行首
+end                    光标跳转至行尾
+
+alt+上箭头              与上一行交换位置
+shift+alt+f             格式化
+ctrl+enter              在下一行增添一行
+ctrl+f5                 强制清空缓存并刷新

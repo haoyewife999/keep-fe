@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20190907.background</title>
+    <style type="text/css">
+        .box1{
+            width: 1000px;
+            height: 700px;
+            margin: 0 auto;
+            background-image: url(484.jpg);
+            /* 相对路径 */
+            background-color: bisque;
+            /* 一般设置完背景图片就设置背景颜色 */
+            background-repeat: repeat-x;
+        }
+        .box2{
+            width: 1000px;
+            height: 49px;
+            background-color: aquamarine;
+            margin: 100px  auto;
+            background-image: url(dht.jpg);
+            background-repeat: repeat-x;
+        }
+        .box3{
+            width: 1800px;
+            height: 600px;
+            background-color: brown;
+            margin: 100px auto;
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-position: top right;
+            /* 给图片定位，默认居中 */
+            background-attachment: fixed;
+            /* 设置成fixed后，设置定位相对于浏览器窗口 ，一般只设在body里fixed*/
+        }
+        .box4{
+            width: 800px;
+            height: 600px;
+            margin: 100px auto;
+            background: brown url(bg.jpg) no-repeat -100px 200px;
+            /* 简写属性 */
+        }
+        body{
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

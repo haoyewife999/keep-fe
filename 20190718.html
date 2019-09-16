@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>20190718</title>
+  <style type="text/css">
+    
+    span{
+      background-color: brown;
+    }
+    #a{
+      background-color: darkgreen;
+    }
+    .b{
+      background-color: blueviolet
+    }
+    p:nth-child(5){
+      background-color: chocolate;
+    }
+    *:not(small){
+      font-size: 20px;      
+    }
+    .h{
+      background-color: aquamarine;
+    }
+    .j{
+      background-color: cadetblue;
+    }
+    .m{
+      background-color: red !important;
+    }
+    .n{
+      background-color: cadetblue;
+    }
+    div{
+      background-color: blue;
+      font-size: 100px;
+    }
+    p:hover:nth-child(8){
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    谁
+    <span>是</span>
+    <span>憨</span>
+    <span>熊</span>
+  </div>
+  <p style="background-color: darkmagenta" id="a" class="b">内联样式优先级最高</p>
+  <p id="a" class="b">id优先级第二</p>
+  <p  class="b">类选择器第三</p>
+  <p>元素第四</p>
+  <p class="h j"> 优先级相同时用后面的</p>
+  <p class="m n p">!important优先级最最高</p>
+  <p title="love you">
+    老公<em>爱</em>媳妇  <br>
+    <strong>媳妇也爱老公</strong>
+  </p>
+  <p><small>图片仅供参考</small></p>
+  <p><cite>《来自天堂的魔鬼》</cite></p>
+  <p><q>夜里做了一个美丽的梦</q></p><br>
+  <blockquote>You took my heart away away away away <br>
+      You took my heart away away away away <br>
+      You took my heart away away away away <br>
+      My head is blown away away away away <br>
+      你就是传说来自天堂的魔鬼</blockquote>
+  <p>
+    2 <sup>10</sup> &nbsp;  H <sub>2</sub>O <br><br>
+    Angelababy <sup><a href="#">[1]</a></sup> <br><br>
+    <del>$488</del><br>
+    $288 <br><br>
+    老公是<ins>憨熊</ins>
+  </p>
+</body>
+</html>
