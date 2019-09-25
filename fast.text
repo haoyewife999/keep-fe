@@ -29,3 +29,5 @@ alt+上箭头              与上一行交换位置
 shift+alt+f             格式化
 ctrl+enter              在下一行增添一行
 ctrl+f5                 强制清空缓存并刷新
+
+ctrl+k s            全部保存
