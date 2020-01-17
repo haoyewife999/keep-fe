@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var reg1=/\./;
+        console.log(reg1.test("h."));
+        var reg2=new RegExp("\\.");/* （）内为字符串，需再用一个\对\进行转义 */
+        console.log(reg2);
+        var reg3=/\bchild\b/;/* 单词边界 */
+        console.log(reg3.test("hi children"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

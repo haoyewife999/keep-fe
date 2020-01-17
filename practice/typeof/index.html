@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script lang="javascript">
+    /**
+     * 判断任意对象的类型
+     * example: realType([]) === 'Array' realType({}) === 'Object'
+     */
+
+    function realType(arg) {
+      let str = Object.prototype.toString.call(arg);
+      // var res = str.substring(8,str.length-1);
+      var res=str.replace(/\[object\s|\]/g,'');
+      console.log(res);
+    }
+
+    realType([]);
+    realType(undefined);
+    realType(null);
+    realType(77);
+    realType(Symbol.isConcatSpreadable);
+    realType(realType);
+    realType([]);
+    realType([]);
+    console.log(typeof "ss");
+  </script>
+</body>
+
+</html>

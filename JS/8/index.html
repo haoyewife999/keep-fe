@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var obj=new Object();
+        obj.name="Frank";
+        obj.gender="male";
+        obj.age="66";
+        obj[123]=789;/* 特殊属性名 */
+        obj.name="tom";
+        delete obj.gender;
+        console.log(obj);
+        var a=123;
+        console.log(obj[a]);/* 使用[]更灵活 */
+        var obj2=new Object();
+        obj2.name="jj";
+        obj.hh=obj2;
+        console.log(obj.hh.name);
+        console.log("name" in obj2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

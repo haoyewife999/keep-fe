@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        var a=8;
+        a++;/* 表达式：a=a+1 */
+        console.log("a="+a);
+
+        var b=8;
+        console.log(b);
+        console.log("++b="+ ++b);
+
+        var c=10;
+        console.log(c++ + ++c+c);
+
+        var d=10;
+        d=d++;
+        console.log("d="+d)
+
+        var e=true;
+        e=!e;
+        console.log("e="+e);
+
+        var f=100;
+        f=!!f;
+        console.log("f="+f);/* 隐式类型转换 */
+
+        false&&console.log("我不出来了");/* 短路的与 */
+        
+        true||console.log("我也不出来");/* 短路的或 */
+
+    //  非布尔值的与或：
+        console.log(2&&4);/* 两个数都为true，返回后面的值 */
+        console.log(NaN&&0);/* 两个数都为false，返回前面的值 */
+        console.log(NaN&&5);
+        //  &&：第一个值为true，返回第二个值
+        //      第一个值为false，返回第一个值
+        console.log(""||3);
+        console.log(8||0);
+        //  ||: 第一个值为false，返回第二个值
+        //      第一个值为true，返回第一个值
+
+        var g=10;
+        // g+=8;
+        console.log(g+=8);
+
+    //  比较符：
+        console.log(5>6);/* 返回布尔值 */   
+        console.log(1>"0");/* 先转换成number，再比较 */
+        console.log(10<"dskjfs");/* 任何值和NaN比较都返回false */
+        console.log("22">"7");
+        /* 若两个值都是字符串，则先转换为Unicode编码，一位一位进行比较，只有第一位的值一样才比较下一位：应用：英文按人名排序 （中文的Unicode编码是按康熙词典[?]编的，所以排序没有意义）*/
+        // 比较两个字符串型的数字时，一定要先转型
+
+        console.log("\u2620");/* unicode编码转义 */
+
+        console.log("1"==1);/* 类型不同时，自动类型转换 ，大多数转换为number,除了null*/
+        console.log(true=="2");
+        console.log(undefined==null);/* undefined衍生自null */
+        console.log(NaN==NaN);/* NaN不和任何值相等，包括它本身 */
+        var h=NaN;
+        console.log(isNaN(h));/* 函数检查是否为NaN */
+        console.log(undefined===null);/* 全等，不会自动类型转换 */
+
+        20>5?console.log("对"):console.log("错");
+
+        var i=10;
+        var j=20;
+        var k=30;
+        var max=i>j?(i>k?i:k):(j>k?j:k);/* 别这样写，不方便阅读 */
+        console.log(max);
+
+        
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -4,7 +4,6 @@ p {
 
 html {
     font-family: 'ZCOOL KuaiLe', cursive;
-    font-size: 50px;
     background-color: blanchedalmond;
 }
 h1{
@@ -31,4 +30,7 @@ h1{
 img{
     display: block;
     margin: 0 auto;
+}
+.right{
+    font-size: 15px;
 }

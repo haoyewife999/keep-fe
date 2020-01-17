@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Dog(name,gender,age) {
+            this.name=name;
+            this.gender=gender;
+            this.age=age;
+            this.sayName=function fun() {
+                alert(this.name);
+            };
+        }
+        var dog1=new Dog("tom","male",3);
+        var dog2=new Dog("ken","female",3);
+        console.log(dog1);
+        dog1.sayName();
+        console.log(dog1 instanceof Dog);/* 检查一个对象是否是一个类的实例 */
+    </script>
+</head>
+<body>
+    
+
+</body>
+</html>

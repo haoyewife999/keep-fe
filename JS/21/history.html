@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>history</h1>
+    <button id="btn">click me.</button>
+    <br>
+    <a href="01.html">01</a>
+    <script>
+        var btn=document.getElementById("btn");
+        btn.onclick=function(){
+            // history.forward();
+            // history.back();
+            history.go(-1);
+        };
+    </script>
+</body>
+</html>

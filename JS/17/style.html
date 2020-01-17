@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+            padding: 50px;
+            border: darkgoldenrod 10px solid;
+        }
+        #box2{
+            padding: 50px;
+            background-color: cornflowerblue;
+        }
+        #box4{
+            width: 200px;
+            height:100px ;
+            background-color: crimson;
+            overflow: scroll;
+        }
+        #box5{
+            width: 100px;
+            height: 300px;
+            background-color: darkcyan;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn01 = document.getElementById("btn01");
+            var box1 = document.getElementById("box1");
+            var box4=document.getElementById("box4");
+            btn01.onclick = function () {
+                console.log(box1.clientHeight);/* 内容区加内边距，只读，只能通过style改 */
+                console.log(window.getComputedStyle(box1).height);
+                console.log(box1.offsetHeight);/* 加边框 */
+                console.log(box1.offsetParent.id);/* 找离他最近的开启定位的祖先元素 */
+                console.log(box1.offsetLeft);
+                console.log(box4.scrollHeight);
+                console.log(box4.scrollTop);
+                // 当box4.scrollHeight-box4.scrollTop==box4.clientHeight时，滚动条滚到底了
+                
+            };
+        };
+
+    </script>
+</head>
+
+<body>
+    <button id="btn01" >click me</button>
+    <div id="box4">
+        <div id="box5"></div>
+    </div>
+    <div id="box3" style="position: relative;">
+        <div id="box2"style="position: relative;">
+            <div id="box1"></div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: darkolivegreen;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>文字</p>
+    <div id="box1"></div>
+    <div id="box2"></div>
+
+
+    <script>
+        var box1 = document.getElementById("box1");
+        box1.onmousedown = function (e) {
+            var left=e.clientX-box1.offsetLeft;
+            var top=e.clientY-box1.offsetTop;
+            document.onmousemove = function (e) {
+                var x = e.clientX;
+                var y = e.clientY;
+                box1.style.left = x -left+ "px";
+                box1.style.top = y -top+ "px";
+            };
+
+            document.onmouseup = function () {
+                document.onmousemove = null;/* 鼠标松开时固定位置 */
+                document.onmouseup = null;/* 一次down后取消其他位置可能会触发的up */
+                alert("s");
+            };
+            return false;/* 防止ctrlA时浏览器默认行为 */
+        };
+    </script>
+</body>
+
+</html>

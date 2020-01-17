@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str="1d2c3f4h5j6m7lHHHH";
+        console.log(str.split(/[A-z]/));/* split默认全局 */
+        console.log(str.search(/[f]/));/* search不能全局 */
+        console.log(str.match(/[A-z]/gi));/* g：全局匹配 */
+        console.log(str.replace(/[A-z]/gi,""));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

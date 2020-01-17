@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        #area {
+            width: 200px;
+            height: 200px;
+            border: blueviolet 5px solid;
+        }
+
+        #show {
+            width: 200px;
+            height: 100px;
+            border: solid 5px brown;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var area=document.getElementById("area");
+            var show=document.getElementById("show");
+            area.onmousemove=function(e){
+                e=event||window.event;/* 兼容 */
+                var x=e.clientX;
+                var y=e.clientY;
+                show.innerHTML="x="+x+",y="+y;
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div id="area"></div>
+    <div id="show"></div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: chartreuse;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <script>
+        var box1 = document.getElementById("box1");
+        function set(ele, key, value) {
+            ele.style[key] = value;
+        }
+        var speed=10;
+        var dir=37;
+        // 通过定时器解决卡顿
+        setInterval(function(){
+            switch (dir) {
+                case 37:
+                    set(box1, 'left', box1.offsetLeft - speed + "px");
+                    break;
+                case 38:
+                    set(box1, 'top', box1.offsetTop - speed + 'px');
+                    break;
+                case 39:
+                    set(box1, 'left', box1.offsetLeft + speed + 'px');
+                    break;
+                case 40:
+                    set(box1, 'top', box1.offsetTop + speed + 'px');
+                default:
+                    break;
+            }
+        },30);
+        document.onkeydown = function (e) {
+            var intr = e.keyCode;
+            if(e.ctrlKey){
+                speed=50;
+            }else{
+                speed=10;
+            }
+            // 不在onkeydown里控制速度
+            dir=intr;
+        };
+        document.onkeyup=function(){
+            dir=0;
+        };
+    </script>
+</body>
+
+</html>

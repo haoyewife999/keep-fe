@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var btn01=document.getElementById("btn01");
+            var u1=document.getElementById("u1");
+            btn01.onclick=function(){
+                var li=document.createElement("li");
+                li.innerHTML="<a href='javascript:;' class='link'>new</a>";
+                u1.appendChild(li);
+            };
+            u1.onclick=function(e){
+                if(e.target.className=="link"){
+                    console.log("i'm a.");
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">add new</button>
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">a1</a></li>
+        <li><a href="javascript:;" class="link">a2</a></li>
+        <li><a href="javascript:;" class="link">a3</a></li>
+        <li><a href="javascript:;" class="link">a4</a></li>
+    </ul>
+</body>
+</html>

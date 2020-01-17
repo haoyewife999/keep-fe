@@ -10,11 +10,14 @@ ctrl+h      历史纪录
 ctrl+shift+鼠标点击      打开并跳转至新标签页  
 ctrl+鼠标点击            打开新标签页但不跳转
 shift+鼠标点击           打开新窗口  
+ctrl+shift+tab          恢复退出前页面
 
 ctrl+l      删除多行
 shift+tab   选中多行同时向左缩进
 按住alt     多光标操作
 ctrl+d     相同元素同时操作
+ctrl+shift+i    选中的相同元素同时操作
+
 
 shift+左箭头            光标选中向左一个字母
 shift+右箭头            光标选中向左一个单词
@@ -31,3 +34,16 @@ ctrl+enter              在下一行增添一行
 ctrl+f5                 强制清空缓存并刷新
 
 ctrl+k s            全部保存
+ctrl+f              页面内查找
+
+f12                 光标到上一次定位位置
+alt+shift+下箭头    复制本行到下一行
+
+shift+alt+alt       小注释
+
+ctrl+alt+alt        qq截图
+ctl+alt+z           显示聊天窗口（唤醒qq消息提示）
+alt+空格+n          最小化聊天窗口
+alt+c               关闭聊天窗口
+
+shift+delete        删除一整行
