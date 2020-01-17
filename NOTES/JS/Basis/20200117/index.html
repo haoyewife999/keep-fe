@@ -8,14 +8,17 @@
 </head>
 <body>
     <script>
-        var obj=new Object;
-        console.log('test' in obj);
-
-        var a=10;
-        var b=a;
-        a++;
-        console.log(a);
-        console.log(b); 
+        (function(){
+            console.log('hello');
+        })();
+        var obj={
+            name:'tom',
+            age:12,
+            gender:'male'
+        };
+        for(var n in obj){
+            console.log(n+':'+ obj[n]);
+        }
     </script>
 </body>
 </html>
