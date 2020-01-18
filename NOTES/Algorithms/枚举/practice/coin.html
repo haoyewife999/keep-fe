@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const left = ['abcd', 'abci', 'abij'];
+    const right = ['efgh', 'efjk', 'efgh'];
+    const result = ['even', 'up', 'even'];
+    const charasters = 'abcdefghijkl';
+    coins();
+    function coins(){
+      for(var i=0;i<charasters.length;i++){
+        if(isFake(charasters[i],true)){
+          console.log(charasters[i]+' is fake,light.');
+        }else if(isFake(charasters[i],false)){
+          console.log(charasters[i]+' is fake,heavy.');
+        }
+      }
+    }
+    function isFake(c,light){
+      for(i=0;i<3;i++){
+        var pleft=left[i];
+        var pright=right[i];
+        if(light==false){
+          pleft=right[i];
+          pright=left[i];
+        }
+
+        switch (result[i]) {
+          case 'even':
+            if(pleft.includes(c)||pright.includes(c))
+            return false;
+            break;
+
+          case 'up':
+            if(!pright.includes(c)){
+              return false;
+            }
+            break;
+
+          case 'down':
+            if(!pleft.includes(c)){
+              return false;
+            }
+          default:
+            break;
+        }
+
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>
