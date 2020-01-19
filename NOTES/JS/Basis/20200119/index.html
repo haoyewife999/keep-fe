@@ -18,6 +18,9 @@
         var per=new person('ff');
         per.sayname();
         console.log(per instanceof person);
+        console.log(per.hasOwnProperty('name'));
+        console.log(per.__proto__.__proto__.hasOwnProperty('hasOwnProperty'));
+        console.log(person.prototype.isPrototypeOf(per));
     </script>
 </body>
 </html>
