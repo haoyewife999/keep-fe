@@ -21,6 +21,10 @@
         console.log(per.hasOwnProperty('name'));
         console.log(per.__proto__.__proto__.hasOwnProperty('hasOwnProperty'));
         console.log(person.prototype.isPrototypeOf(per));
+        per.toString=function(){
+            return this.name;
+        }
+        console.log(per.toString());
     </script>
 </body>
 </html>

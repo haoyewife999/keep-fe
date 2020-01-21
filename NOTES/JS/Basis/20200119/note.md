@@ -78,3 +78,10 @@
   * 将这个对象的__proto__成员指向F函数对象prototype成员对象
   * 将F函数对象的this指针替换成obj，然后再调用F函数
   
+* toString()
+  在页面中打印对象时，输出对象的toString()方法的返回值,可以修改此方法
+  ```js
+  per.toString=function(){
+            return this.name;
+        }
+    ```
