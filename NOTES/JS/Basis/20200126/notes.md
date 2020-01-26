@@ -90,7 +90,7 @@ console.log(String.fromCharCode(72));//H
 
   转换为大写
 * toLowerCase()
-
+    
   转换为小写
 
 ## 正则表达式
@@ -116,6 +116,7 @@ console.log(String.fromCharCode(72));//H
   var reg=/ab+c/ //至少一个b
   var reg=/ab*c/ //0或多个b
   var reg=/ab?c/ //0或1个b
+  var reg=/[A-z0-9]/ //任意字母数字
   ```
 * 开头
   ```js
@@ -123,7 +124,32 @@ console.log(String.fromCharCode(72));//H
   var reg=/a$/ //$表示结尾，即以a结尾
   
   ```
-  
+* 转义字符
+  * . 表示任意字符
+  ```js
+      var reg=/\./;
+      var reg=new RegExp('\\.');
+      console.log(reg); // /\./
+      //因为字符串中/是转义字符
+  ```
+  名称|功能
+  ---|--
+  \w|任意字母、数字、下划线
+  \W|除了字母、数字、下划线
+  \d|任意数字
+  \D|除了数字
+  \s|空格
+  \S|除了空格
+  \b|单词边界
+  \B|除了单词边界
+  ```js
+  var reg=/\bchild\b/;
+  console.log(reg.test('children'));//false
+  ```
+  ```js
+  var str='   chi  ld  ';
+  console.log(str.replace(/^\s+|\s+$/g,''));//去开头和结尾的空格
+  ```
 * String的正则表达式方法
   * split()
 
