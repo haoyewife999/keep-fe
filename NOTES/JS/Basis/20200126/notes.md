@@ -179,6 +179,22 @@ console.log(String.fromCharCode(72));//H
   var str='adcA1247gSdja';
   console.log(str.replace(/[a-z]/gi,''));
   ```
+## DOM
+* document object model
+* Node 节点
+  * 文档节点：document，整个HTML文档
+  * 元素节点
+  * 属性节点
+  * 文本节点：nodeValue为文本内容
+* 事件
+* 文档的加载
+
+  为使页面加载完后执行js代码
+  ```js
+  window.onload=function(){
+      //jsCode
+  };
+
 ## 其他
 * 包装类
 
