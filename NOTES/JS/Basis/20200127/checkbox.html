@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            var all=document.getElementById('all');
+            var no=document.getElementById('no');
+            var rev=document.getElementById('rev');
+            var allnot=document.getElementById('allnot');
+            var items=document.getElementsByName('items');
+            all.onclick=function(){
+                for(i=0;i<items.length;i++){
+                    items[i].checked=true;
+                }
+            };
+            no.onclick=function(){
+                for(i=0;i<items.length;i++){
+                    items[i].checked=false;
+                }
+            };
+            rev.onclick=function(){
+                for(i=0;i<items.length;i++){
+                    items[i].checked=!items[i].checked;
+                }
+            };
+            allnot.onclick=function(){
+                for(i=0;i<items.length;i++){
+                    items[i].checked=allnot.checked;
+                }
+            };
+        };
+    </script>
+    <form action="" method="post">
+        what is your like?<input type="checkbox" name="" id="allnot">all/allNot
+        <br>
+        <input type="checkbox" name="items" value="f">f
+        <input type="checkbox" name="items" value="w">w
+        <input type="checkbox" name="items" value="d">d
+        <input type="checkbox" name="items" value="v">v
+        <br>
+        <input type="button" value="all" id="all">
+        <input type="button" value="no" id="no"> 
+        <input type="button" value="rev" id="rev">
+    </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #outer{
+            width: 500px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: aquamarine;
+            text-align: center;
+        }  
+    </style>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            var prev=document.getElementById('prev');
+            var next=document.getElementById('next');
+            var img=document.getElementsByTagName('img')[0];//返回数组
+            var imgArry=['../../../../photos/strawberry.jpg','../../../../photos/fry.jpg','../../../../photos/cake.jpg'];
+            var index=0;
+            var info=document.getElementById('info');
+            prev.onclick=function(){
+                index--;
+                if(index<0){
+                    index=imgArry.length-1;
+                }
+                img.src=imgArry[index];
+                info.innerHTML='共'+imgArry.length+'张图片'+',当前第'+(index+1)+'张';
+            };
+            next.onclick=function(){
+                index++;
+                if(index>imgArry.length-1){
+                    index=0;
+                }
+                img.src=imgArry[index];
+                info.innerHTML='共'+imgArry.length+'张图片'+',当前第'+(index+1)+'张';
+                console.log(img.src);
+            };
+            
+        };
+    </script>
+    <div id="outer">
+        <img src="../../../../photos/fry.jpg" alt="cake">
+        <button id="prev">previous</button>
+        <button id="next">next</button>
+        <p id="info"></p>
+    </div>
+</body>
+</html>
