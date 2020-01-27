@@ -34,6 +34,17 @@
                     items[i].checked=allnot.checked;
                 }
             };
+            for(var i=0;i<items.length;i++){
+                items[i].onclick=function(){
+                    for(var j=0;j<items.length;j++){
+                        allnot.checked=true;
+
+                        if(!items[j].checked){
+                            allnot.checked=false;
+                        }
+                    }
+                };
+            }
         };
     </script>
     <form action="" method="post">
