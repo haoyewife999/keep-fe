@@ -18,16 +18,25 @@
                 for(i=0;i<items.length;i++){
                     items[i].checked=true;
                 }
+                allnot.checked=true;
             };
             no.onclick=function(){
                 for(i=0;i<items.length;i++){
                     items[i].checked=false;
                 }
+                allnot.checked=false;
             };
             rev.onclick=function(){
                 for(i=0;i<items.length;i++){
                     items[i].checked=!items[i].checked;
                 }
+                allnot.checked=true;//位置在哪&为什么
+                    for(var j=0;j<items.length;j++){
+                        if(!items[j].checked){
+                            allnot.checked=false;
+                            break;
+                        }
+                    }
             };
             allnot.onclick=function(){
                 for(i=0;i<items.length;i++){
@@ -36,11 +45,11 @@
             };
             for(var i=0;i<items.length;i++){
                 items[i].onclick=function(){
+                    allnot.checked=true;//位置在哪&为什么
                     for(var j=0;j<items.length;j++){
-                        allnot.checked=true;
-
                         if(!items[j].checked){
                             allnot.checked=false;
+                            break;
                         }
                     }
                 };
