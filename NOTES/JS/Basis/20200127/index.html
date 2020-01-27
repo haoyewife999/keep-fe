@@ -7,15 +7,41 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <ul id="container">
+        <li class="items">123</li>
+        <li class="items">53263</li>
+    </ul>
+    <div>
+        <input type="text" id="text" placeholder="请输入">
+        <button id="add">添加</button>
+    </div>
+
     <script>
-        window.onload=function(){
-            var body=document.body;//body
-            var html=document.documentElement;//html
-            var all=document.all;//页面所有元素
-            var child=document.getElementsByClassName('child');//类名
-            var child=document.querySelector('box1 div');//返回第一个
-            var child=document.querySelectorAll('box1');//返回数组
+        const container=document.getElementById('container');
+        const items=document.querySelectorAll('.items');//获取不到新加的？why？
+        const text=document.getElementById('text');
+        const add=document.getElementById('add');
+        items.forEach(
+            function(item){
+                item.onclick=function(){
+                    item.remove();
+                };
+            }
+        );
+        
+        add.onclick=function(){
+            const value=text.value;
+            const newChild=document.createElement('li');
+            newChild.innerHTML=value;
+            container.appendChild(newChild);
+            newChild.classList.add('items');//什么用？
+            text.value='';
+            newChild.onclick=function(e){
+                    e.target.remove();
+                };         
         };
+        console.log(items);
     </script>
 </body>
 </html>
