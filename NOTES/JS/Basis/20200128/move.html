@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        body{
+            margin: 0;
+        }
+        #text{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <div id="text"> 
+    </div>
+    <script>
+        const box=document.querySelector('#box');
+        const text=document.querySelector('#text');
+        box.onmousemove=function(e){
+            text.innerHTML='clientX'+(e.clientX-e.target.clientLeft)+',clienY'+(e.clientY-e.target.clientTop);
+        };
+    </script>
+</body>
+</html>

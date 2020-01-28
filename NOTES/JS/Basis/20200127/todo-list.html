@@ -22,24 +22,20 @@
         const items=document.querySelectorAll('.items');//获取不到新加的？why？
         const text=document.getElementById('text');
         const add=document.getElementById('add');
-        items.forEach(
-            function(item){
-                item.onclick=function(){
-                    item.remove();
-                };
-            }
-        );
         
+        container.onclick=function(e){
+            if(e.target.classList.contains('items')){
+                e.target.remove();
+            }
+        };
+
         add.onclick=function(){
             const value=text.value;
             const newChild=document.createElement('li');
             newChild.innerHTML=value;
             container.appendChild(newChild);
             newChild.classList.add('items');//什么用？
-            text.value='';
-            newChild.onclick=function(e){
-                    e.target.remove();
-                };         
+            text.value='';        
         };
         console.log(items);
     </script>
