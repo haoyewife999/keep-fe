@@ -29,10 +29,12 @@
 
     // 1 + 2 + 3 + 4
     console.log(array1.reduce(reducer));
+    //从第二个参数2开始回调
     // expected output: 10
 
     // 5 + 1 + 2 + 3 + 4
     console.log(array1.reduce(reducer, 5));
+    //从第一个参数1开始回调
     // expected output: 15
 ```
 * filter
