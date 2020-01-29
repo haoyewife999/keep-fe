@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        const box=document.querySelector('#box');
+        box.onwheel=function(e){
+            const hw=getComputedStyle(box);
+            // 获取原来高度
+            const oldHeight=parseInt(hw.height);
+            const oldWidth=parseInt(hw.width);
+            // 计算现在的高度
+            let newHeight=oldHeight+e.deltaY;
+            let newWidth=oldWidth+e.deltaX;
+            newHeight=Math.min(1000,Math.max(e.clientY,newHeight));
+            newWidth=Math.max(e.clientX,Math.min(newWidth,1000));
+            // 赋值
+            box.style.height=newHeight+'px';
+            box.style.width=newWidth+"px";
+        };
+    </script>
+</body>
+</html>
