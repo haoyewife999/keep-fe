@@ -22,23 +22,45 @@
         const box = document.querySelector('#box');
         let x=0;
         let y=0;
+        let dir;
+        let speed = 10;
         function setTransform(){
             box.style.transform=`translate(${x}px, ${y}px)`;
         }
-        document.onkeydown = function (e) {
-            switch (e.key) {
+        document.onkeydown=function(e){
+            dir=e.key;
+            if(e.altKey){
+                speed=20;
+            }else{
+                speed=10;
+            }
+        }
+        document.onkeyup=function(){
+            dir = '';
+        }
+        requestAnimationFrame(function fun () {
+            switch (dir) {
                 case 'ArrowRight':
-                    x=x+10;
+                    x=x+speed;
                     break;
 
                 case 'ArrowDown':
-                    y=y+10;
+                    y=y+speed;
+                    break;
+
+                case 'ArrowUp':
+                    y = y - speed;
+                    break;
+
+                case 'ArrowLeft':
+                    x = x - speed;
                     break;
                 default:
                     break;
             }
             setTransform();
-        };
+            requestAnimationFrame(fun);
+        });
     </script>
 </body>
 

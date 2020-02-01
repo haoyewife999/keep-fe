@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .menu {
+      background-color: green;
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    .item-container {
+      max-height: 30px;
+      transition: max-height .5s;
+      overflow: hidden;
+      border: 2px solid blue;
+    }
+
+    .item-title {
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .active {
+      max-height: 100px;
+    }
+
+    ul,li {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <ul class="menu">
+    <li class="item-container active">
+      <div class="item-title" style="color:brown;">title</div>
+      <ul class="items"><li>fdjks</li><li>fhsk</li>lisjdfh</ul>
+    </li>
+    <li class="item-container">
+      <div class="item-title" style="color:brown;">title</div>
+      <ul class="items"><li>fdjks</li><li>fhsk</li>lisjdfh</ul>
+    </li>
+    <li class="item-container">
+      <div class="item-title" style="color:brown;">title</div>
+      <ul class="items"><li>fdjks</li><li>fhsk</li>lisjdfh</ul>
+    </li>
+  </ul>
+
+  <script>
+    const menu = document.querySelector('.menu');
+    menu.addEventListener('click',e => {
+      if(e.target.classList.contains('item-title')){
+        Array.from(menu.children).forEach(element =>{
+        if(element === e.target.parentNode) {
+          element.classList.toggle('active');
+        }else {
+          element.classList.remove('active');
+        }
+      })
+      }
+    })
+
+    
+  </script>
+</body>
+</html>

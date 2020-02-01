@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            width: 500px;
+            margin: 10px auto;
+            overflow: hidden;/* 边界是谁 */
+            border: cadetblue 10px solid;
+            position: relative;
+            font-size: 0;
+        }
+
+        .imgContainer {
+            display: inline-block;
+            white-space: nowrap; /* 不换行 */
+            transition: all .5s;
+        }
+
+        .imgContainer li {
+            display: inline-block;
+            width: 500px;
+            height: 420px;
+        }
+
+        .items {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .items li {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <ul class="imgContainer">
+            <li style="background-image: url('../../../../photos/bc.jpg');"></li>
+            <li style="background-image: url('../../../../photos/blue.jpg');"></li>
+            <li style="background-image: url('../../../../photos/gray.jpg');"></li>
+        </ul>
+        <ul class="items">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        const imgContainer = document.querySelector('.imgContainer');
+        const items = document.querySelector('.items');
+        let x = 0;
+        let timer;
+
+        function setTransform() {
+            imgContainer.style.transform = `translateX(${x * (-500)}px)`;
+        }
+
+        items.addEventListener('click',e => {
+            if(e.target.tagName == 'LI') {
+                x = Array.from(items.children).indexOf(e.target);
+                setTransform();
+            }
+        })
+
+        function setTimer() {
+            timer = setInterval(() => {
+                x = (x + 1) % imgContainer.children.length ;
+                setTransform();
+            },1000);
+        }
+
+        setTimer();
+
+        items.addEventListener('mouseover',() => {
+            clearInterval(timer);
+        })
+
+        items.addEventListener('mouseleave',() => {
+            setTimer();
+        })
+    </script>
+</body>
+</html>

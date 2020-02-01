@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">click</button>
+    <div class="box"></div>
+    <script>
+        const box=document.querySelector('.box');
+        const btn=document.querySelector('.btn');
+        let x = 0;
+        function setPo(){
+            x += 10;
+            if(x>300){
+                x=100;
+            }
+            box.style.transform=`translateX(${x}px)`;
+        }
+        let res;
+        btn.onclick=function(){
+            cancelAnimationFrame(res);
+            res = requestAnimationFrame(function fun(){
+                setPo();
+                res = requestAnimationFrame(fun);
+            });
+
+        };
+    </script>
+</body>
+</html>

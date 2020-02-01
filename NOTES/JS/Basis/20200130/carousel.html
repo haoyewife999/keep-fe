@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img-container {
+            list-style: none;
+            display: inline-block;
+            white-space: nowrap;
+            transition: all .5s;
+
+        }
+
+        .img-item {
+            width: 500px;
+            height: 370px;
+            display: inline-block;
+            margin: 0 20px 0 0; 
+            background: no-repeat center/cover;
+        }
+
+        .outer {
+            width: 500px;
+            margin: 10px auto;
+            border: brown 20px solid;
+            font-size: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dir{
+            position: absolute;
+            bottom: 0;
+            left: 50% ;
+            transform: translateX(-50%);
+        }
+
+        .dir li{
+            width: 50px;
+            height: 50px;
+            background-color: cadetblue;
+            display: inline-block;
+            margin: 10px ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <ul class="img-container">
+            <li class="img-item" style="background-image: url('../../../../photos/blue.jpg');"></li>
+            <li class="img-item" style="background-image: url('../../../../photos/gray.jpg');"></li>
+            <li class="img-item" style="background-image: url('../../../../photos/bc.jpg');"></li>
+        </ul>
+        <ul class="dir">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        const imgContainer = document.querySelector('.img-container');
+        const dir = document.querySelector('.dir');
+        let timer;
+        let i = 0;
+        const swit = Array.from(dir.children);
+
+        function setTimer() {
+            timer = setInterval(function() {
+                i = (i+1) % imgContainer.children.length;
+                imgContainer.style.transform = `translateX(${- i * 520}px)`;
+            },1000)
+        }
+
+
+        dir.addEventListener('click',e => {
+            if(e.target.tagName == 'LI') {
+                i = swit.indexOf(e.target);
+                imgContainer.style.transform = `translateX(${- i * 520}px)`;
+            }
+        });
+
+        setTimer();
+
+        dir.addEventListener('mouseover',()=> {
+            clearInterval(timer);
+        })
+
+        dir.addEventListener('mouseleave',() => {
+            setTimer();
+        })
+
+    </script>
+</body>
+
+</html>

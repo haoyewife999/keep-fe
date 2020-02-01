@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #photos{
+            width: 500px;
+            height: 500px;
+            background-color: blueviolet;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photos">
+        <img src="../../../../photos/cake.jpg" alt="cake">
+    </div>
+    <script>
+        const img=document.querySelector('img');
+        const photoArry=['../../../../photos/cake.jpg','../../../../photos/fry.jpg','../../../../photos/strawberry.jpg'];
+        let i = 0;
+        setInterval(()=>{
+            i =(i+1) % photoArry.length; 
+            img.src=photoArry[i];
+        },500);
+    </script>
+</body>
+</html>
